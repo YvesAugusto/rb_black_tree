@@ -17,7 +17,6 @@ struct No{
     } 
 }; 
   
-// Class to represent Red-Black Tree 
 class RBTree { 
 private: 
     No *root; 
@@ -221,18 +220,15 @@ void RBTree::Corrigir(No *&root, No *&pt) {
     root->color = BLACK; 
 } 
   
-// Function to insert a new No with given data 
 void RBTree::insert(const int &data) { 
     No *pt = new No(data); 
   
-    // Do a normal BST insert 
+      // Insere BST 
     root = insertBST(root, pt); 
   
-    // fix Red Black Tree violations 
     Corrigir(root, pt); 
 } 
   
-// Function to do inorder and level order traversals 
 void RBTree::inorder()     {  inorderHelper(root);} 
 void RBTree::levelOrder()  {  levelOrderHelper(root); } 
   
@@ -248,10 +244,10 @@ int main() {
     tree.insert(2); 
     tree.insert(1); 
   
-    cout << "INor Traversal of Created Tree\n"; 
+    cout << "\n"; 
     tree.inorder(); 
   
-    cout << "\n\nLevel Order Traversal of Created Tree\n"; 
+    cout << "\n\n\n"; 
     tree.levelOrder(); 
   
     return 0; 
